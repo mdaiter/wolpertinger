@@ -3,6 +3,7 @@
 
 from ddpg import DDPG
 import action_space
+from action_space import Discrete_space
 from util import *
 
 import tinygrad

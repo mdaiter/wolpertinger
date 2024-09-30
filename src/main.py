@@ -71,9 +71,6 @@ if __name__ == "__main__":
     if args.load:
         agent.load_weights(args.load_model_dir)
 
-    if args.gpu_ids[0] >= 0 and args.gpu_nums > 0:
-        agent.cuda_convert()
-
     # set logger, log args here
     log = {}
     if args.mode == 'train':
