@@ -4,7 +4,7 @@
 # [reference] Use and modified code in https://github.com/ghliu/pytorch-ddpg
 
 import tinygrad
-from tinygrad import nn, Tensor
+from tinygrad import nn, Tensor, dtypes
 from tinygrad.nn.optim import LAMB
 
 from model import (Actor, Critic)

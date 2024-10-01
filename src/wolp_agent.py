@@ -3,11 +3,11 @@
 
 from ddpg import DDPG
 import action_space
-from action_space import Discrete_space
+from action_space import Discrete_space, Space
 from util import *
 
 import tinygrad
-from tinygrad import Tensor, nn
+from tinygrad import Tensor, nn, dtypes
 
 import numpy as np
 np.bool = np.bool_

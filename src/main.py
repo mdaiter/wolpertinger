@@ -9,7 +9,7 @@ import warnings
 from arg_parser import init_parser
 from setproctitle import setproctitle as ptitle
 from normalized_env import NormalizedEnv
-import gym
+import gymnasium as gym
 
 if __name__ == "__main__":
     ptitle('WOLP_DDPG')
