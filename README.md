@@ -2,6 +2,26 @@
 
 They're fast! They're snazzy! They're Wolpertinger Agents, written in tinygrad!
 
+# Quickstart
+tinygrad version of Wolpertinger Training with DDPG (paper: Deep Reinforcement Learning in Large Discrete Action Spaces).
+It is compatible with both continuous and discrete control of OpenAI gym.
+In continuous case, I discretize the action space to use the wolpertinger-DDPG training algorithm.
+
+# Usage
+
+* In Pendulum-v0 (continuous control), discretize the continuous action space to a discrete action spaces with 200000 actions.
+```python main.py --env 'Pendulum-v0' --max-actions 200000```
+* In CartPole-v1 (discrete control), --max-actions is not needed.
+```python main.py --env 'CartPole-v1'```
+* To use CPU only:
+```python main.py --gpu-ids -1```
+* To use single-GPU only:
+```python main.py --gpu-ids 0 --gpu-nums 1```
+* To use multi-GPU (e.g., use GPU-0 and GPU-1):
+```python main.py --gpu-ids 0 1 --gpu-nums 2```
+
+(Huge shoutout to [ChangyWen](https://github.com/ChangyWen) for his [implementation of this in PyTorch](https://github.com/ChangyWen/wolpertinger_ddpg/tree/master))
+
 # What are Wolpertinger Agents?
 
 Wolpertinger Agents are an approach to handling reinforcement learning problems with large discrete action spaces. Here's an explanation geared towards software engineers:
