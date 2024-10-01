@@ -133,14 +133,23 @@ def load_flann_library():
 
     root_dir = os.path.abspath(os.path.dirname(__file__))
 
-    libnames = ['libflann.dylib']
-    libdir = 'darwin'
+    libnames = ['libflann.so']
+    libdir = 'linux'
+
+    if sys.platform == 'win32':
+        libdir = 'win32'
+        if sys.maxsize > 2 ** 32:
+            libnames = ['x64/flann.dll', 'x64/libflann.dll']
+        else:
+            libnames = ['x86/flann.dll', 'x86/libflann.dll']
+    elif sys.platform == 'darwin':
+        libnames = ['libflann.dylib']
+        libdir = 'darwin'
 
     while root_dir != None:
         for libname in libnames:
             try:
-                print(f'Importing flannlib from: {os.path.join(root_dir, libdir, libname)}')
-                flannlib = cdll[os.path.join(root_dir, libdir, libname)]
+                flannlib = cdll[os.path.join(root_dir, libdir, libnames)]
                 return flannlib
             except Exception as e:
                 pass
