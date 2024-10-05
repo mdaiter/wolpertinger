@@ -13,12 +13,6 @@ In continuous case, I discretize the action space to use the wolpertinger-DDPG t
 ```python main.py --env 'Pendulum-v0' --max-actions 200000```
 * In CartPole-v1 (discrete control), --max-actions is not needed.
 ```python main.py --env 'CartPole-v1'```
-* To use CPU only:
-```python main.py --gpu-ids -1```
-* To use single-GPU only:
-```python main.py --gpu-ids 0 --gpu-nums 1```
-* To use multi-GPU (e.g., use GPU-0 and GPU-1):
-```python main.py --gpu-ids 0 1 --gpu-nums 2```
 
 (Huge shoutout to [ChangyWen](https://github.com/ChangyWen) for his [implementation of this in PyTorch](https://github.com/ChangyWen/wolpertinger_ddpg/tree/master))
 
